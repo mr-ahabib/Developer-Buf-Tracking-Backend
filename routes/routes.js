@@ -8,6 +8,9 @@ const adminMiddleware = require('../middleware/adminMiddleware');
 router.post('/projects', authMiddleware, adminMiddleware, projectController.createProject);
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
+router.get('/verify', authController.verifyEmail);
+
+
 router.get('/profile', authMiddleware, (req, res) => {
   res.json({ user: req.user });
 });

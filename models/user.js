@@ -22,8 +22,14 @@ module.exports = (sequelize, DataTypes) => {
 },
 
     password: DataTypes.STRING,
-    role: DataTypes.ENUM('admin', 'tester', 'developer')
-  }, {
+    role: DataTypes.ENUM('admin', 'tester', 'developer'),
+    isVerified: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  }
+  }, 
+  
+  {
     sequelize,
     modelName: 'User',
   });

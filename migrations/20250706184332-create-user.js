@@ -23,6 +23,10 @@ module.exports = {
       role: {
         type: Sequelize.ENUM('admin', 'tester', 'developer')
       },
+      isVerified: {                               // ✅ Add this field
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
